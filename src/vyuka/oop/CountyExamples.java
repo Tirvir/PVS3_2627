@@ -1,5 +1,5 @@
-package oop;
-import Basics.Country;
+package vyuka.oop;
+import vyuka.basics.Country;
 import fileworks.DataImport;
 
 public class CountyExamples {

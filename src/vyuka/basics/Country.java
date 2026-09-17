@@ -1,4 +1,4 @@
-package Basics;
+package vyuka.basics;
 
 public class Country {
     String name, continent;

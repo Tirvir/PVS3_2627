@@ -1,4 +1,4 @@
-package Basics;
+package vyuka.basics;
 
 public class ParseSimple {
     public static void main(String[] args) {
