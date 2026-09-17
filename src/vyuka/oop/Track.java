@@ -61,7 +61,7 @@ public class Track {
                 '}';
     }
 
-    static void main() {
+    public static void main(String[] args) {
         DataImport di = new DataImport("data/tracks.txt");
         ArrayList<Track> tokens = new ArrayList<>();
 
