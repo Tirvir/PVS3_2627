@@ -9,7 +9,7 @@ public class Movie {
     String type;
     double rating;
 
-    public Movie(String name, int year, String type, double rating) {
+    public Movie(String name, int year, String type, double rating){
         this.name = name;
         this.year = year;
         this.type = type;
@@ -40,7 +40,7 @@ public class Movie {
                     tokens[2],
                     Double.parseDouble(tokens[3]));
 
-            if (bestRated.rating< film.rating){
+            if (bestRated.rating<film.rating){
                 bestRated = film;
             }
 
