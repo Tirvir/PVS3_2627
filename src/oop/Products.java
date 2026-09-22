@@ -85,18 +85,23 @@ public class Products {
             String line = di.readLine();
             String[] tokens = line.split(";");
             if (tokens.length==2){
-                Product product = new Product(tokens[0],tokens[1]);
+                Product product = new Product(tokens[0],
+                        tokens[1]);
                 list.add(product);
             }
             if (tokens.length==3){
-                Product product = new Product(tokens[0],tokens[1], Integer.parseInt(tokens[2]));
+                Product product = new Product(tokens[0],
+                        tokens[1],
+                        Integer.parseInt(tokens[2]));
                 list.add(product);
             }
             if (tokens.length==4){
-                Product product = new Product(tokens[0],tokens[1],Integer.parseInt(tokens[2]), Double.parseDouble(tokens[3]));
+                Product product = new Product(tokens[0],
+                        tokens[1],
+                        Integer.parseInt(tokens[2]),
+                        Double.parseDouble(tokens[3]));
                 list.add(product);
             }
-
         }
         for(Product p : list){
             if (p.getInStock()>0){
@@ -111,7 +116,7 @@ public class Products {
                 allPrice+= p.getPrice();
             }
         }
-        System.out.println("Prumerna cena je "+(allPrice/numberOfProducts));
+        System.out.println("Average price is "+(allPrice/numberOfProducts));
         di.finishImport();
     }
 }
