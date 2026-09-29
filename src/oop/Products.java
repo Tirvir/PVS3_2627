@@ -81,10 +81,11 @@ public class Products {
         ArrayList<Product> list = new ArrayList<>();
         int allInStock = 0;
         DataImport di = new DataImport("data/products.txt");
+        Product product;
         while(di.hasNext()){
             String line = di.readLine();
             String[] tokens = line.split(";");
-            if (tokens.length==2){
+/*            if (tokens.length==2){
                 Product product = new Product(tokens[0],
                         tokens[1]);
                 list.add(product);
@@ -102,7 +103,26 @@ public class Products {
                         Double.parseDouble(tokens[3]));
                 list.add(product);
             }
-        }
+        }*/
+            switch (tokens.length) {
+                case 4:
+                    product = new Product(tokens[0], tokens[1], Integer.parseInt(tokens[2]), Double.parseDouble(tokens[3]));
+                    break;
+                case 3:
+                    product = new Product(tokens[0], tokens[1], Integer.parseInt(tokens[2]));
+                    break;
+                case 2:
+                    product = new Product(tokens[0], tokens[1]);
+                    break;
+                default:
+                    System.out.println("Tento radek nema validni delku: " + line);
+                    product = null;
+                    break;
+            }
+            list.add(product);
+
+
+    }
         for(Product p : list){
             if (p.getInStock()>0){
                 allInStock+=p.getInStock();
@@ -118,5 +138,5 @@ public class Products {
         }
         System.out.println("Average price is "+(allPrice/numberOfProducts));
         di.finishImport();
-    }
+}
 }
