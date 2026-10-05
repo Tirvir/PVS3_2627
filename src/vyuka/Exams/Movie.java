@@ -1,4 +1,4 @@
-package vyuka.Test1;
+package vyuka.Exams;
 
 import fileworks.DataExport;
 import fileworks.DataImport;
