@@ -98,8 +98,7 @@ class Main {
                 if (a instanceof Dog) {
                     System.out.println(((Dog) a).breed);
                 }
-                }
             }
-
+        }
     }
 }
