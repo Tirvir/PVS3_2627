@@ -1,5 +1,7 @@
 package vyuka.oop.inheritance.hunters;
 
+import fileworks.DataImport;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -29,9 +31,59 @@ public class HuntingSeason {
                 break;
         }
     }
+    static void loadData(String filePath, ArrayList<Hunter> hunters){
+        DataImport di = new DataImport(filePath);
+        Hunter currentHunter;
+        String[] tokens;
+        while (di.hasNext()){
+            String line = di.readLine();
+            tokens = line.split(",");
+            switch (tokens[1]){
+                case "Soldier":
+                    currentHunter = new Soldier(tokens[0]);
+                    hunters.add(currentHunter);
+                    break;
+                case "Witcher":
+                    currentHunter = new Witcher(tokens[0]);
+                    hunters.add(currentHunter);
+                    break;
+                default :
+                    currentHunter = new Hunter(tokens[0]);
+                    hunters.add(currentHunter);
+                    break;
+            }
+        }
 
+        di.finishImport();
+    }
+
+    static void processTasks(Hunter hunter, String[] taskList){
+        for (int i = 2; i < taskList.length; i++) {
+            switch (taskList[i]){
+                case "K":
+                    if (hunter instanceof Soldier){
+                        ((Soldier) hunter).killBandit();
+                    }
+                    break;
+                case "M":
+                    if (hunter instanceof Witcher){
+                        ((Witcher) hunter).slayMonster();
+                    }
+                    break;
+                default:
+                    hunter.hunt();
+                    break;
+            }
+        }
+    }
     public static void main(String[] args) {
         ArrayList<Hunter> hunters = new ArrayList<>();
+        loadData("data/hunters.txt",hunters);
+        if (!hunters.isEmpty()){
+
+        }
+
+
         hunters.add(new Hunter("Theodore Roosevelt"));
         hunters.add(new Soldier("Jack Carter"));
         hunters.add(new Soldier("Ondřej Wislocki"));
