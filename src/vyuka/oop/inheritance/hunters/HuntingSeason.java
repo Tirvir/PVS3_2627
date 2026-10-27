@@ -1,6 +1,4 @@
-package oop.inheritance.hunters;
-
-import fileworks.DataExport;
+package vyuka.oop.inheritance.hunters;
 
 import java.util.ArrayList;
 import java.util.Random;

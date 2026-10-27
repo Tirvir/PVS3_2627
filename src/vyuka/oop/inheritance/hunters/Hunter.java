@@ -1,4 +1,4 @@
-package oop.inheritance.hunters;
+package vyuka.oop.inheritance.hunters;
 
 public class Hunter {
     String name;
