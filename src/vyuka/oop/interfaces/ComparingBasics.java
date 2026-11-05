@@ -1,12 +1,15 @@
 package vyuka.oop.interfaces;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ComparingBasics {
     static void printList(ArrayList<Item> items){
         for (Item i : items){
             System.out.println(i);
+
         }
+        System.out.println();
     }
     public static void main(String[] args) {
         ArrayList<Item> items = new ArrayList<>();
@@ -15,6 +18,9 @@ public class ComparingBasics {
         items.add(new Item("Mango Monster",500000, 1.65));
         items.add(new Item("Beef steak",100000, 11.5));
         printList(items);
+        Collections.sort(items);
+        printList(items);
+
     }
 }
 
@@ -40,6 +46,17 @@ class Item implements Comparable<Item>{
 
     @Override
     public int compareTo(Item o) {
-        return 0;
+        return this.name.compareTo(o.name);
     }
+
+    //@Override
+    //public int compareTo(Item o) {
+    //    return this.quantity - o.quantity;
+    //}
+
+
+   //@Override
+   //public int compareTo(Item o) {
+   //    return Double.compare(this.price,o.price);
+   //}
 }
