@@ -28,11 +28,9 @@ public class Country implements Comparable<Country>{
         public int compare(Country o1, Country o2) {
             return Double.compare(o1.avgAge,o2.avgAge);
         }
-    } ;
+    };
     @Override
     public int compareTo(Country o) {
-        if (this.name.length()>o.name.length()) return 1;
-        else if (this.name.length()<o.name.length()) return -1;
-        return 0;
+        return Integer.compare(this.name.length(), o.name.length());
     }
 }

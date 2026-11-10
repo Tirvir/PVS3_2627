@@ -32,6 +32,7 @@ public class CountyExamples {
         //tridi prirozene - Comparable
         Collections.sort(countries);
         printList(countries);
+        // pri konkretnim komparatoru
         countries.sort(Country.BY_AVG_AGE.reversed());
         printList(countries);
     }

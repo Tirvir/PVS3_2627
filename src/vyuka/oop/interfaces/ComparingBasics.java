@@ -47,7 +47,7 @@ class Item implements Comparable<Item>{
             double o2Total = o2.price*o2.quantity;
             return Double.compare(o1Total,o2Total);
         }
-    } ;
+    };
 
 
 
