@@ -1,7 +1,6 @@
 package vyuka.oop.sth;
 import vyuka.basics.Country;
 import fileworks.DataImport;
-
 import java.util.ArrayList;
 import java.util.Collections;
 

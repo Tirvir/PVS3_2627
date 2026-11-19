@@ -1,4 +1,4 @@
-package vyuka.Exams;
+package vyuka.Exams.inheritance;
 
 import fileworks.DataExport;
 import fileworks.DataImport;
